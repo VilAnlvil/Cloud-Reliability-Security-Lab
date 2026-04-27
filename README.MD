@@ -60,5 +60,17 @@ terraform init
 terraform apply
 ```
 
+## 🧪 Caos en Acción (Evidencias)
+
+### 📈 Monitoreo de Latencia
+En esta captura se observa el impacto inmediato de activar el switch de caos. La latencia media pasa de **~2ms** a **>3s**, simulando una degradación de red o saturación de base de datos.
+
+![Dashboards de Grafana](./docs/img/dashboard-latency-chaos.png)
+
+### 🩺 Salud del Sistema (Self-Healing)
+Registro de cómo Prometheus detecta el estado de salud de los targets en tiempo real.
+
+![Prometheus Targets](./docs/img/prometheus-targets.png)
+
 ---
 *Este proyecto forma parte de mi camino hacia la maestría en SRE y observabilidad cloud.*

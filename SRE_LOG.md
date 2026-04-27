@@ -61,4 +61,18 @@ Este archivo es el registro histórico de operaciones, decisiones de arquitectur
 **Resultado:** ✅ Aplicación estable y accesible bajo Podman. Documentación de workaround incluida en README.
 
 ---
-*Checkpoint SRE: Sesión finalizada con éxito. Sistema operando bajo estándares de seguridad avanzados.*
+
+## [2026-04-27] - Validación de Observabilidad y Chaos Testing Local
+**Acción:** 
+- Despliegue del stack LGO (Local Grafana Observability).
+- Configuración de dashboards de latencia y throughput (RPS).
+- Ejecución de inyección de latencia vía middleware y validación en tiempo real.
+
+**Justificación & Compliance:** 
+- **Observabilidad (Golden Signals):** Implementación de monitoreo sobre Latencia y Tráfico.
+- **Chaos Engineering:** Validación del impacto del caos en las métricas de negocio. El sistema respondió correctamente exponiendo la degradación del servicio.
+
+**Resultado:** ✅ Métricas validadas. Dashboard funcional. Sistema listo para fase de despliegue en AWS.
+
+---
+*Checkpoint SRE: El laboratorio es ahora una herramienta de diagnóstico completa.*
