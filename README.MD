@@ -73,4 +73,4 @@ Registro de cómo Prometheus detecta el estado de salud de los targets en tiempo
 ![Prometheus Targets](./docs/img/prometheus-targets.png)
 
 ---
-*Este proyecto forma parte de mi camino hacia la maestría en SRE y observabilidad cloud.*
+*Desarrollado bajo principios de **SRE & AWS Well-Architected**. Este laboratorio es una prueba continua de que la visibilidad y el diseño para el fallo son las bases de la infraestructura moderna. 🚀*
