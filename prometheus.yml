@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 5s # Muy rápido para que los gráficos se muevan mucho
+
+scrape_configs:
+  - job_name: 'sre-chaos-app'
+    static_configs:
+      - targets: ['host.containers.internal:8000'] # Apunta a tu app fuera del contenedor de Prometheus

@@ -23,6 +23,9 @@ graph TD
 
 *   **Infraestructura como Código (IaC):** Despliegue total en AWS usando Terraform (VPC, ECS, ECR).
 *   **Observabilidad Nativa:** Instrumentación con `prometheus-fastapi-instrumentator` y exportación de logs a CloudWatch.
+*   **Estrategia de Observabilidad Dual:**
+    *   **Local:** Stack Prometheus/Grafana para feedback rápido en desarrollo.
+    *   **Cloud (AWS):** CloudWatch Logs y Métricas integradas mediante arquitectura nativa.
 *   **Chaos Engineering Integrado:** Endpoints controlados para simular degradación de servicio:
     *   `POST /chaos/latency/toggle`: Inyecta latencia aleatoria (2-5s).
     *   `POST /chaos/errors/toggle`: Activa una tasa de error del 30% (Simulación de fallo de dependencia).
@@ -38,11 +41,17 @@ Este laboratorio permite medir:
 
 ## 🛠️ Ejecución Rápida
 
-### Local (Docker)
+### Local (Docker / Podman)
 ```bash
+# Con Docker
 docker build -t sre-chaos-app .
 docker run -p 8000:8000 sre-chaos-app
+
+# Con Podman (Recomendado para SRE)
+podman build -t sre-chaos-app .
+podman run -d --name chaos-app -p 8000:8000 sre-chaos-app
 ```
+> **Nota SRE:** En entornos Podman Rootless, si `localhost:8000` falla, utiliza `http://0.0.0.0:8000` o la IP de tu interfaz para saltar las limitaciones de la pila de red `slirp4netns`.
 
 ### AWS (Terraform)
 ```bash
