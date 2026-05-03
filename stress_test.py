@@ -4,13 +4,13 @@ import time
 import random
 import os
 
-# ✅ URL configurable por variable de entorno, con fallback a localhost
+# URL configurable por variable de entorno, con fallback a localhost
 BASE_URL = os.getenv("TARGET_URL", "http://localhost:8000")
-# ✅ Timeout configurable, default 5 segundos
+# Timeout configurable por variable de entorno, default 5 segundos
 TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "5"))
 
 def send_traffic():
-    print(f"🚀 Generando tráfico hacia {BASE_URL}... (CTRL+C para parar)")
+    print(f"Generando trafico hacia {BASE_URL}... (CTRL+C para detener)")
     while True:
         try:
             # Petición normal con timeout
@@ -23,10 +23,10 @@ def send_traffic():
             time.sleep(0.5)  # ~2 peticiones por segundo
 
         except requests.Timeout:
-            print("⏱️ Timeout en la petición — reintentando...")
+            print("Timeout en la peticion, reintentando...")
             time.sleep(1)
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Error: {e}")
             time.sleep(1)
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-# 📔 SRE Operation Log - Chaos Lab
+# SRE Operation Log - Chaos Lab
 
 Este archivo es el registro histórico de operaciones, decisiones de arquitectura y tareas de mantenimiento ejecutadas en el proyecto.
 
@@ -30,7 +30,7 @@ Este archivo es el registro histórico de operaciones, decisiones de arquitectur
 - **Alerting:** Implementar métricas de CloudWatch sobre el conteo de `failedTasks` para detectar CrashLoops automáticamente.
 - **Liveness Probes:** Refinar el `startPeriod` del health check de ECS para evitar reinicios prematuros en arranques pesados.
 
-**Resultado:** ✅ API Saludable, Logs visibles y Sistema 100% bajo control de Terraform.
+**Resultado:** API operativa, logs visibles en CloudWatch y estado de infraestructura bajo gestion exclusiva de Terraform.
 
 ---
 
@@ -45,7 +45,7 @@ Este archivo es el registro histórico de operaciones, decisiones de arquitectur
 - **Atractivo:** Uso de diagramas de arquitectura para facilitar la comprensión del sistema en revisiones rápidas de reclutadores.
 - **SRE Principles:** Enfoque en las 4 Golden Signals como métricas de éxito.
 
-**Resultado:** ✅ Repositorio listo para ser compartido. Código funcional para demos en vivo.
+**Resultado:** Repositorio publicado y apto para demostraciones tecnicas. Codigo validado contra los endpoints documentados.
 
 ---
 
@@ -58,7 +58,7 @@ Este archivo es el registro histórico de operaciones, decisiones de arquitectur
 - **Seguridad (Least Privilege):** Uso de Podman para evitar el uso de un daemon con privilegios de root.
 - **RCA (Root Cause Analysis):** Se identificó que la pila de red `slirp4netns` de Podman Rootless puede presentar conflictos con el loopback del host. Se resolvió apuntando a `0.0.0.0` o la IP de la interfaz.
 
-**Resultado:** ✅ Aplicación estable y accesible bajo Podman. Documentación de workaround incluida en README.
+**Resultado:** Aplicacion estable y accesible bajo Podman Rootless. Se documento el workaround de red en el README para referencia futura.
 
 ---
 
@@ -72,7 +72,7 @@ Este archivo es el registro histórico de operaciones, decisiones de arquitectur
 - **Observabilidad (Golden Signals):** Implementación de monitoreo sobre Latencia y Tráfico.
 - **Chaos Engineering:** Validación del impacto del caos en las métricas de negocio. El sistema respondió correctamente exponiendo la degradación del servicio.
 
-**Resultado:** ✅ Métricas validadas. Dashboard funcional. Sistema listo para fase de despliegue en AWS.
+**Resultado:** Metricas validadas en Grafana. Dashboard operativo. Sistema aprobado para la fase de despliegue en AWS.
 
 ---
-*Checkpoint SRE: El laboratorio es ahora una herramienta de diagnóstico completa.*
+*Registro de operaciones SRE. El laboratorio constituye una herramienta de diagnostico completa para el ciclo de vida de incidentes en infraestructura cloud.*
